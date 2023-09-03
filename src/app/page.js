@@ -6,8 +6,8 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="flex flex-col">
-        <section className="min-h-screen justify-between p-24 flex gap-8">
+      <main className="flex flex-col p-24">
+        <section className="min-h-screen justify-between flex gap-8">
         <div className="flex flex-col w-1/2 gap-4">
           <h2 className="text-4xl leading-loose font-extrabold pb-4">
             جاده‌ای پر سرعت برای تبدیل ایده‌های نو به محصولات عالی
@@ -34,7 +34,7 @@ export default function Home() {
         </section>
         <section className="flex flex-col items-center">
           <div className="h-4 w-36 rounded-full bg-primary" />
-          <p>sdfjsldfjslkcvxcv,xcvmx.c,vmx.c,vmx.cv,m</p>
+          <p className="font-extrabold text-4xl pt-4 leading-loose text-center">ما بر این باوریم که فرهنگ و اقتصاد ایجاد کسب و کار نیاز به بازنگری اساسی دارد و ما در حال ایجاد مکانیسمی برای انجام آن هستیم.</p>
         </section>
       </main>
     </>
