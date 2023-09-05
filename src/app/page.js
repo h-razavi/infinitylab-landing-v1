@@ -2,9 +2,7 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import banner from "../../public/images/banner.gif";
 import Logo from "../../public/images/logo-white.png";
-import community from "../../public/images/community.png";
-import speed from "../../public/images/high-speed.png";
-import social from "../../public/images/social-care.png";
+import Carousel from "./carousel";
 
 export default function Home() {
   return (
@@ -71,38 +69,7 @@ export default function Home() {
             استارت‌آپ استودیوی آینده
           </p>
         </section>
-        <section className="h-[30rem] ">
-          <div className="h-[20rem]">
-            <div className="h-3 w-3/4 bg-white rounded-full -z-10 mx-auto relative top-[10rem]" />
-            <div className="flex mt-8">
-              <div className="h-[16rem] w-[16rem] bg-primary rounded-full mx-auto grid place-items-center hover:scale-110 hover:transition hover:duration-500 ease-in-out">
-                <Image src={community} alt="community" height={160} />
-              </div>
-              <div className="h-[16rem] w-[16rem] bg-primary rounded-full mx-auto grid place-items-center hover:scale-110 hover:transition hover:duration-700 hover:ease-out">
-                <Image src={speed} alt="speed" height={160} />
-              </div>
-              <div className="h-[16rem] w-[16rem] bg-primary rounded-full mx-auto grid place-items-center hover:scale-110 hover:transition hover:duration-500 ease-out">
-                <Image src={social} alt="social" height={160} />
-              </div>
-            </div>
-            <div className="flex h-full text-black relative -top-[18rem] z-10 group">
-              <div className="w-1/3 bg-primary grid place-items-center text-center opacity-0 group-hover:opacity-100 group-hover:transition-all group-hover:duration-500 group-hover:ease-in-out">
-                is this thing workin
-              </div>
-              <div className=" w-1/3 bg-primary grid place-items-center text-center opacity-0 group-hover:opacity-100 group-hover:transition-all group-hover:duration-500 group-hover:ease-in-out">
-                yes or no
-              </div>
-              <div className="w-1/3 bg-primary grid place-items-center text-center opacity-0 group-hover:opacity-100 group-hover:transition-all group-hover:duration-500 group-hover:ease-in-out">
-                please tell me
-              </div>
-            </div>
-          </div>
-          <div className="h-[10rem] pt-10 flex">
-            <p className="w-1/3 h-full text-center font-bold text-2xl">تامین سرمایه و منابع جمعی</p>
-            <p className="w-1/3 h-full text-center font-bold text-2xl">از ایده به محصول در یک چشم به هم زدن</p>
-            <p className="w-1/3 h-full text-center font-bold text-2xl">اثرگذاری محسوس در اجتماع و فرهنگ</p>
-          </div>
-        </section>
+        <Carousel />
       </main>
     </>
   );
