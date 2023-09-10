@@ -2,8 +2,9 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import banner from "../../public/images/banner.gif";
 import Logo from "../../public/images/logo-white.png";
-import Carousel from "./carousel";
-import GetInvolved from "./get-involved";
+import Carousel from "@/components/carousel";
+import GetInvolved from "@/components/get-involved";
+import Footer from "@/components/footer";
 
 
 export default function Home() {
@@ -33,7 +34,6 @@ export default function Home() {
             <Image
               src={banner}
               alt="banner"
-              className="border border-gray-800 rounded-xl shadow-md shadow-slate-300"
             />
           </div>
         </section>
@@ -74,6 +74,7 @@ export default function Home() {
         <Carousel />
         <GetInvolved />
       </main>
+      <Footer />
     </>
   );
 }
