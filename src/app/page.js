@@ -3,6 +3,8 @@ import Navbar from "@/components/Navbar";
 import banner from "../../public/images/banner.gif";
 import Logo from "../../public/images/logo-white.png";
 import Carousel from "./carousel";
+import GetInvolved from "./get-involved";
+
 
 export default function Home() {
   return (
@@ -60,7 +62,7 @@ export default function Home() {
         </section>
         <section className="px-24 flex flex-col items-center">
           <div className="flex items-center gap-4">
-            <Image src={Logo} alt="logo" height={60} />{" "}
+            <Image src={Logo} alt="logo" height={60} />
             <h2 className="font-extrabold text-3xl text-primary">
               اینفینیتی لب
             </h2>
@@ -70,6 +72,7 @@ export default function Home() {
           </p>
         </section>
         <Carousel />
+        <GetInvolved />
       </main>
     </>
   );
