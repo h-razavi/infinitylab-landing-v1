@@ -1,13 +1,22 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
+import supabase from "../../../supabase-client";
 import talentIcon from "../../../public/images/talent.svg";
 import influenceIcon from "../../../public/images/influence.svg";
 import capitalIcon from "../../../public/images/capital.svg";
 
 function SignupPage() {
   const [checkboxes, setCheckboxes] = useState([false, false, false, false]);
-  const [textInput, setTextInput] = useState("");
+  const [otherText, setOtherText] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [errorObject, setErrorObject] = useState({
+    nameError: false,
+    emailError: false,
+    otherTextError: false,
+    checkboxesError: false,
+  });
 
   const handleCheckboxChange = (index) => (event) => {
     const newCheckboxes = [...checkboxes];
@@ -16,8 +25,53 @@ function SignupPage() {
   };
 
   const handleTextChange = (event) => {
-    setTextInput(event.target.value);
+    setOtherText(event.target.value);
   };
+
+  function handleSubmitData(e) {
+    let formData;
+    e.preventDefault();
+
+    if(!checkboxes.includes(true)) {
+      setErrorObject({ checkboxesError: true });
+      return;
+    }
+
+    switch (true) {
+      case !name: {
+        setErrorObject({ nameError: true });
+        break;
+      } case !email: {
+        setErrorObject({ emailError: true });
+        break;
+      } case !otherText: {
+        setErrorObject({ otherTextError: true });
+        break;
+      } default: {
+        break;
+      }
+    }
+
+    setErrorObject({
+      nameError: false,
+      emailError: false,
+      otherTextError: false,
+      checkboxesError: false,
+    });
+    setName("");
+    setEmail("");
+    setOtherText("");
+    setCheckboxes([false, false, false, false]);
+    formData = {
+      name,
+      email,
+      otherText,
+      checkboxes,
+    };
+    console.log(formData);
+    const { error } = supabase.from("SUPABASE_KEY").insert([formData]).select()
+    console.log(error);
+  }
 
   return (
     <div className=" my-24 flex items-center justify-center overflow-y-scroll">
@@ -32,37 +86,66 @@ function SignupPage() {
         <p className="mt-4 text-lg text-slate-500">
           بعد از پر کردن فرم زیر، ما خیلی زود با شما تماس خواهیم گرفت
         </p>
-        <form>
+        <form onSubmit={handleSubmitData}>
           <div className="flex flex-col items-start mt-6">
             <label htmlFor="name" className="font-bold pr-3">
-              نام و نام خانوادگی*
+              نام و نام خانوادگی<span className="text-red-500">*</span>
             </label>
             <input
               required
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              onBlur={(e) =>
+                !e.target.value
+                  ? setErrorObject({ nameError: true })
+                  : setErrorObject({ nameError: false })
+              }
               name="name"
               type="text"
               placeholder="نام و نام خانوادگی"
               className=" w-full border-2 border-slate-500 px-4 py-2 rounded-lg"
             />
+            {errorObject.nameError && (
+              <p className="text-red-500 pr-2 font-light">
+                نام و نام خانوادگی را به درستی وارد کنید
+              </p>
+            )}
           </div>
           <div className="flex flex-col items-start mt-6">
             <label htmlFor="email" className="font-bold pr-3">
-              آدرس ایمیل*
+              آدرس ایمیل<span className="text-red-500">*</span>
             </label>
             <input
               required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              onBlur={(e) =>
+                !e.target.value
+                  ? setErrorObject({ emailError: true })
+                  : setErrorObject({ emailError: false })
+              }
               name="email"
               type="email"
               placeholder="آدرس ایمیل"
               className=" w-full border-2 border-slate-500 px-4 py-2 rounded-lg"
             />
+            {errorObject.emailError && (
+              <p className="text-red-500 pr-2 font-light">
+                ایمیل را به درستی وارد کنید
+              </p>
+            )}
           </div>
 
           <div className="mt-4 text-right">
             <h3 className="pr-3 font-bold">
               با خود چه چیزی را به اینفینیتی لب خواهید آورد؟
+              <span className="text-red-500">*</span>
             </h3>
-
+            {errorObject.checkboxesError && (
+              <p className="text-red-500 pr-2 font-light">
+                  لطفاً یکی از گزینه‌های زیر را انتخاب کنید
+              </p>
+            )}
             <label
               htmlFor="talent"
               className="p-4 border-2 border-slate-400 rounded-md block my-4"
@@ -148,17 +231,35 @@ function SignupPage() {
                 نوع دیگری از سرمایه
               </div>
             </label>
-            {checkboxes[3]&&
-                  <input
+            {checkboxes[3] && (
+              <>
+                <input
+                  required
                   type="text"
-                  value={textInput}
+                  value={otherText}
                   onChange={handleTextChange}
+                  onBlur={(e) =>
+                    !e.target.value
+                      ? setErrorObject({ otherTextError: true })
+                      : setErrorObject({ otherTextError: false })
+                  }
                   placeholder="بیشتر توضیح دهید"
                   className="w-full border-2 border-slate-500 px-4 py-2 rounded-lg"
                 />
-            }
+                {errorObject.otherTextError && (
+                  <p className="text-red-500 pr-2 font-light">
+                    لطفا توضیحات خود را به طور کامل وارد کنید
+                  </p>
+                )}
+              </>
+            )}
           </div>
-          <button type="submit" className="bg-primary hover:bg-hover text-black w-full font-bold my-4 px-4 py-2 rounded-lg">ثبت اطلاعات</button>
+          <button
+            type="submit"
+            className="bg-primary hover:bg-hover text-black w-full font-bold my-4 px-4 py-2 rounded-lg"
+          >
+            ثبت اطلاعات
+          </button>
         </form>
       </div>
     </div>
