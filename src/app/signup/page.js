@@ -5,12 +5,14 @@ import supabase from "../../../supabase-client";
 import talentIcon from "../../../public/images/talent.svg";
 import influenceIcon from "../../../public/images/influence.svg";
 import capitalIcon from "../../../public/images/capital.svg";
+import LoadingSpinner from "@/components/LoadingSpinner";
 
 function SignupPage() {
   const [checkboxes, setCheckboxes] = useState([false, false, false, false]);
   const [otherText, setOtherText] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
   const [errorObject, setErrorObject] = useState({
     nameError: false,
     emailError: false,
@@ -28,36 +30,22 @@ function SignupPage() {
     setOtherText(event.target.value);
   };
 
-  function handleSubmitData(e) {
+  async function handleSubmitData(e) {
     let formData;
+    setLoading(true);
     e.preventDefault();
 
-    if(!checkboxes.includes(true)) {
+    if (!checkboxes.includes(true)) {
       setErrorObject({ checkboxesError: true });
       return;
     }
 
-    switch (true) {
-      case !name: {
-        setErrorObject({ nameError: true });
-        break;
-      } case !email: {
-        setErrorObject({ emailError: true });
-        break;
-      } case !otherText: {
-        setErrorObject({ otherTextError: true });
-        break;
-      } default: {
-        break;
-      }
-    }
-
     setErrorObject({
-      nameError: false,
-      emailError: false,
-      otherTextError: false,
-      checkboxesError: false,
+      nameError: !name,
+      emailError: !email,
+      otherTextError: !otherText,
     });
+
     setName("");
     setEmail("");
     setOtherText("");
@@ -69,8 +57,15 @@ function SignupPage() {
       checkboxes,
     };
     console.log(formData);
-    const { error } = supabase.from("SUPABASE_KEY").insert([formData]).select()
-    console.log(error);
+    const { error } = await supabase.from("member-data").insert([
+      formData
+    ])
+    if (error) {
+      alert(error.message)
+    } else {
+      alert("اطلاعات شما با موفقیت ارسال شد")
+    }
+    setLoading(false);
   }
 
   return (
@@ -143,7 +138,7 @@ function SignupPage() {
             </h3>
             {errorObject.checkboxesError && (
               <p className="text-red-500 pr-2 font-light">
-                  لطفاً یکی از گزینه‌های زیر را انتخاب کنید
+                لطفاً یکی از گزینه‌های زیر را انتخاب کنید
               </p>
             )}
             <label
@@ -258,7 +253,7 @@ function SignupPage() {
             type="submit"
             className="bg-primary hover:bg-hover text-black w-full font-bold my-4 px-4 py-2 rounded-lg"
           >
-            ثبت اطلاعات
+            {loading?<LoadingSpinner />:"ثبت اطلاعات"}
           </button>
         </form>
       </div>
