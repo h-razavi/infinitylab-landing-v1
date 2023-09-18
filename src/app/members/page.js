@@ -6,12 +6,15 @@ function MemberData() {
 const [memberData , setMemberData] = useState([]);
 async function getMembers(){
     const {data,error} = await supabase.from('member-data').select();
-    return data;
+    setMemberData(data);
 }
 
 useEffect(()=>{
-    setMemberData(getMembers());
+    getMembers();
 },[])
+
+console.log(memberData);
+
   return (
     <div className='p-24 break-all'>
         <h2 className='text-4xl font-extrabold text-center'>اطلاعات اعضا</h2>
@@ -27,8 +30,8 @@ useEffect(()=>{
                            <div className='flex min-w-full'>
                            <div className="p-4 border-2 border-slate-300 w-[15%]">{member.name}</div>
                            <div className='p-4 border-2 border-slate-300 w-[15%]'>{member.email}</div>
-                           <div className='p-4 border-2 border-slate-300 w-[10%]'>{member.createdAt}</div>
-                           <div className='p-4 border-2 border-slate-300 w-[30%]'>{member.checkboxes[0]?"تخصص":""} و {member.checkboxes[1]?"نفوذ":""} و {member.checkboxes[2]?"سرمایه":""} و {member.checkboxes[3]?"دیگر":""}</div>
+                           <div className='p-4 border-2 border-slate-300 w-[10%]'>{member.created_at.split("T")[0]}</div>
+                           <div className='p-4 border-2 border-slate-300 w-[30%]'>{member.checkboxes[0]?"تخصص":""} {member.checkboxes[1]?"نفوذ":""}  {member.checkboxes[2]?"سرمایه":""}  {member.checkboxes[3]?"دیگر":""}</div>
                            <div className='p-4 border-2 border-slate-300 w-[30%]'>{member.otherText}</div>
                        </div> 
             ))}

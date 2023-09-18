@@ -5,6 +5,7 @@ import Logo from "../../public/images/logo-white.png";
 import Carousel from "@/components/carousel";
 import GetInvolved from "@/components/get-involved";
 import Footer from "@/components/footer";
+import Link from "next/link";
 
 
 export default function Home() {
@@ -12,7 +13,7 @@ export default function Home() {
     <>
       <Navbar />
       <main className="flex flex-col p-24">
-        <section className="min-h-screen justify-between flex gap-8">
+        <section className=" justify-between flex gap-8">
           <div className="flex flex-col w-1/2 gap-4">
             <h2 className="text-4xl leading-loose font-extrabold pb-4">
               جاده‌ای پر سرعت برای تبدیل ایده‌های نو به محصولات عالی
@@ -26,9 +27,11 @@ export default function Home() {
             <p className="font-bold italic">
               ماموریت بلندپروازانه ما : ساخت 20 شرکت موفق و سودده ظرف 2 سال
             </p>
-            <button className="bg-primary hover:bg-hover text-black font-bold py-2 px-4 rounded-full duration-500 ease-in-out">
+            <Link href="/signup" className="w-full">
+            <button className="bg-primary hover:bg-hover text-black font-bold py-2 px-4 rounded-full duration-500 ease-in-out w-full">
               جای شما در کنار ما خالیست
             </button>
+            </Link>
           </div>
           <div className="w-1/2">
             <Image
@@ -37,7 +40,7 @@ export default function Home() {
             />
           </div>
         </section>
-        <section className="flex flex-col items-center p-24">
+        <section className="flex flex-col items-center p-24" id="why">
           <div className="h-4 w-36 rounded-full bg-primary" />
           <h3 className="font-extrabold text-4xl pt-4 leading-loose text-center">
             ما بر این باوریم که فرهنگ و اقتصاد ایجاد کسب و کار نیاز به یک
@@ -60,7 +63,7 @@ export default function Home() {
             سطوح سازمان است <br />
           </p>
         </section>
-        <section className="px-24 flex flex-col items-center">
+        <section className="px-24 flex flex-col items-center" id="what">
           <div className="flex items-center gap-4">
             <Image src={Logo} alt="logo" height={60} />
             <h2 className="font-extrabold text-3xl text-primary">

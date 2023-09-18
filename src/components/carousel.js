@@ -6,7 +6,7 @@ import social from "../../public/images/social-care.png";
 
 function Carousel() {
   return (
-    <section className="h-[30rem] min-w-full px-24">
+    <section className="h-[30rem] min-w-full px-24 hidden lg:block">
       <div className="h-[20rem]">
         <div className="h-3 w-3/4 bg-white rounded-full -z-10 mx-auto relative top-[10rem]" />
 

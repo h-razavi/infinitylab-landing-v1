@@ -11,7 +11,7 @@ function Footer() {
     <footer className="w-full h-18 px-24 py-8 bg-primary text-black flex items-end justify-between">
       <div className="flex flex-col items-center">
         <Image src={Logo} alt="logo" height={100} />
-        <p>&copy;کلیه حقوق این سایت برای مجموعه اینفینیتی لب محفوظ است</p>
+        <p className="hidden lg:block">&copy;کلیه حقوق این سایت برای مجموعه اینفینیتی لب محفوظ است</p>
       </div>
       <div className="flex flex-col items-end gap-8">
         <div className="flex gap-4">
@@ -20,7 +20,7 @@ function Footer() {
             <Image src={telegramIcon} alt="telegram" height={30} />
             <Image src={whatsappIcon} alt="whatsapp" height={30} />
         </div>
-        <div className="flex gap-4">
+        <div className="lg:flex hidden gap-4">
             <a>درباره ما</a>
             <a>تماس با ما</a>
             <a>سوالات متداول</a>

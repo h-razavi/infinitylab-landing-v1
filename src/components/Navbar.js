@@ -6,18 +6,26 @@ import CTAButton from "./CTAButton";
 
 function Navbar() {
   return (
-    <nav className="px-16 py-10 flex items-center justify-between">
-      <Link href="/" className="flex items-center">
+    <nav className="px-16 py-4 md:py-10 flex items-center justify-center lg:justify-between">
+      <Link href="/" className="flex flex-col md:flex-row items-center">
         <Image src={Logo} alt="logo" height={80} />
         <h2 className="font-extrabold text-3xl ">استارت‌آپ استودیو</h2>
       </Link>
-      <div className="flex items-center">
+      <div className="lg:flex items-center hidden">
         <div className="flex gap-10 ml-16 text-2xl">
-          <a className="hover:outline-4 hover:outline outline-offset-8 outline-primary cursor-pointer hover:transition-all hover:duration-500">چرا؟</a>
-          <a className="hover:outline-4 hover:outline outline-offset-8 outline-primary cursor-pointer hover:transition-all hover:duration-500">چی؟</a>
-          <a className="hover:outline-4 hover:outline outline-offset-8 outline-primary cursor-pointer hover:transition-all hover:duration-500">چطور؟</a>
+          <a className="hover:outline-4 hover:outline outline-offset-8 outline-primary cursor-pointer hover:transition-all hover:duration-500" href="#why">
+            چرا؟
+          </a>
+          <a className="hover:outline-4 hover:outline outline-offset-8 outline-primary cursor-pointer hover:transition-all hover:duration-500" href="#what">
+            چی؟
+          </a>
+          <a className="hover:outline-4 hover:outline outline-offset-8 outline-primary cursor-pointer hover:transition-all hover:duration-500" href="#how">
+            چطور؟
+          </a>
         </div>
-        <CTAButton />
+        <Link href="/signup">
+          <CTAButton />
+        </Link>
       </div>
     </nav>
   );
