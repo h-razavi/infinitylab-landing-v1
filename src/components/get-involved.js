@@ -6,7 +6,7 @@ import capitalIcon from '../../public/images/capital.svg';
 
 function GetInvolved() {
   return (
-    <section className="p-24" id="how">
+    <section className="p-8 md:p-24" id="how">
       <div className="h-4 w-36 rounded-full bg-primary mx-auto" />
       <h2 className="text-center text-2xl lg:text-4xl font-extrabold leading-loose pt-4">
         هدف ما فراهم نمودن دسترسی آسان به کارآفرینی و سرمایه‌گذاری در ایده‌های
