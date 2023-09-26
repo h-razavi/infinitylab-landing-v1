@@ -11,7 +11,7 @@ import Hero from "@/components/hero";
 export default function Home() {
   return (
     <>
-      <Navbar />
+      <Navbar isMain={true} />
       <main className="flex flex-col md:p-24 p-8">
         <Hero />
         <section className="flex flex-col items-center p-8 mt-8 md:p-24" id="why">

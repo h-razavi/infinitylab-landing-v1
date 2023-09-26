@@ -4,7 +4,7 @@ import Logo from "../../public/images/logo-wtext-black.png";
 import linkedinIcon from '../../public/images/linkedin.png'
 import instagramIcon from '../../public/images/instagram.png'
 import telegramIcon from '../../public/images/telegram.png'
-import whatsappIcon from '../../public/images/whatsapp.png'
+import Link from "next/link";
 
 function Footer() {
   return (
@@ -20,7 +20,7 @@ function Footer() {
             <a href="https://t.me/infinitylabstudio" target="_blank"><Image src={telegramIcon} alt="telegram" height={30} /></a>
         </div>
         <div className="lg:flex hidden gap-4">
-            <a>درباره ما</a>
+            <Link href="/about"> درباره ما</Link>
             <a>تماس با ما</a>
             <a>سوالات متداول</a>
             <a>لینک‌های مفید</a>
