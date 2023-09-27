@@ -6,6 +6,8 @@ import talentIcon from "../../../public/images/talent.svg";
 import influenceIcon from "../../../public/images/influence.svg";
 import capitalIcon from "../../../public/images/capital.svg";
 import LoadingSpinner from "@/components/LoadingSpinner";
+import Link from "next/link";
+import Logo from "../../../public/images/logo-black.png";
 
 function SignupPage() {
   const [checkboxes, setCheckboxes] = useState([false, false, false, false]);
@@ -72,6 +74,10 @@ function SignupPage() {
     <div className=" my-24 flex items-center justify-center overflow-y-scroll">
       <div className="fixed inset-0 bg-gray-900 opacity-50 backdrop-blur-md"></div>
       <div className="bg-white p-5 rounded-lg shadow-2xl text-black z-10 text-center">
+          <Link href="/" className="flex items-center gap-2 border-2 border-black rounded-md w-fit p-2">
+        <Image src={Logo} alt="logo" height={25} />
+        <h4 className="text-right">بازگشت</h4>
+          </Link>
         <h2 className="text-2xl font-bold border-b-8 border-primary my-4">
           همراه ما شو
         </h2>

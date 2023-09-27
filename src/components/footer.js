@@ -21,9 +21,9 @@ function Footer() {
         </div>
         <div className="lg:flex hidden gap-4">
             <Link href="/about"> درباره ما</Link>
-            <a>تماس با ما</a>
-            <a>سوالات متداول</a>
-            <a>لینک‌های مفید</a>
+            <Link href="/contact"> تماس با ما</Link>
+            <Link href="/faq">سوالات متداول</Link>
+            <Link href="/links">لینک‌های مفید</Link>
              
         </div>
       </div>
