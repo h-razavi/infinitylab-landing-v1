@@ -22,7 +22,7 @@ export default function Home() {
           </h3>
           <div className="h-4 w-36 rounded-full bg-primary md:mt-24" />
           <h3 className="font-extrabold text-3xl pt-4 leading-loose text-center">
-            الگویی نو در ساخت اکوسیستم استارت‌آپی
+             الگویی نو در ساخت اکوسیستم استارت‌آپی
           </h3>
           <p className="text-slate-400 text-xl leading-relaxed text-center">
             ما در <b>اینفینیتی لب</b> رویایی جسورانه داریم. آینده‌ای که در آن
