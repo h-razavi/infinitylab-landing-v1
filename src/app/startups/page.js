@@ -1,5 +1,5 @@
 import Navbar from "@/components/Navbar";
-import StartupCard from "../../components/StartupCard";
+import StartupCard from "@/app/startups/components/StartupCard";
 import React from "react";
 
 function StartupsPage() {
