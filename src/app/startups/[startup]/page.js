@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import React from "react";
+import StartupContactForm from "../components/StartupContactForm";
 
 function StartupProfile() {
   return (
@@ -237,16 +238,9 @@ function StartupProfile() {
           فرم تماس
         </h2>
         <p>
-          جهت تماس مستقیم با این استارت‌آپ فرم زیر را پر کنید.
+          سوالات بیشتری دارید؟جهت تماس مستقیم با این استارت‌آپ فرم زیر را پر کنید.
         </p>
-        <form className="mt-8 flex flex-col gap-4 w-full mb-8">
-          <div className="flex gap-4 w-full justify-between">
-          <input type="text" placeholder="نام" className="bg-white bg-opacity-30 p-2 rounded-lg w-[50%]" />
-          <input type="email" placeholder="ایمیل" className="bg-white bg-opacity-30 p-2 rounded-lg w-[50%]" />
-          </div>
-          <textarea placeholder="پیام" className="bg-white bg-opacity-30 p-2 rounded-lg"></textarea>
-          <button className="bg-primary hover:bg-hover text-black text-xl p-2 rounded-lg">ارسال</button>
-        </form>
+        <StartupContactForm />
         </div>
       </section>
     </div>
