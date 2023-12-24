@@ -13,6 +13,10 @@ function handleSubmit(e){
     const email = emailInputRef.current.value;
     const name = nameInputRef.current.value;
     const message = messageInputRef.current.value;
+    if(!email || !name || !message){
+        alert("لطفا همه فیلدها را پر کنید")
+        return;
+    }
     console.log(`the user named ${name} sent an email from ${email} with the message: ${message}`);
     emailInputRef.current.value = "";
     nameInputRef.current.value = "";
