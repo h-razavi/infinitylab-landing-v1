@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import banner from "../../public/images/banner.gif";
@@ -26,7 +25,7 @@ function Hero() {
       </Link>
     </div>
     <div className="md:w-1/2 w-full">
-      <Image
+      <img
         src={banner}
         alt="banner"
       />

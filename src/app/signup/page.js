@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import React, { useState } from "react";
 import supabase from "../../../supabase-client";
 import talentIcon from "../../../public/images/talent.svg";
@@ -75,7 +74,7 @@ function SignupPage() {
       <div className="fixed inset-0 bg-gray-900 opacity-50 backdrop-blur-md"></div>
       <div className="bg-white p-5 rounded-lg shadow-2xl text-black z-10 text-center">
           <Link href="/" className="flex items-center gap-2 border-2 border-black rounded-md w-fit p-2">
-        <Image src={Logo} alt="logo" height={25} />
+        <img src={Logo} alt="logo" height={25} />
         <h4 className="text-right">بازگشت</h4>
           </Link>
         <h2 className="text-2xl font-bold border-b-8 border-primary my-4">
@@ -161,7 +160,7 @@ function SignupPage() {
                   className="h-8 w-8 "
                 />
                 استعداد و توانایی ‌فنی
-                <Image
+                <img
                   src={talentIcon}
                   alt="talent"
                   height={30}
@@ -184,7 +183,7 @@ function SignupPage() {
                   className="h-8 w-8"
                 />
                 نفوذ و روابط اجتماعی
-                <Image
+                <img
                   src={influenceIcon}
                   alt="influence"
                   height={30}
@@ -207,7 +206,7 @@ function SignupPage() {
                   className="h-8 w-8 "
                 />
                 سرمایه مالی
-                <Image
+                <img
                   src={capitalIcon}
                   alt="capital"
                   height={30}

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Navbar from "@/components/Navbar";
 
 import Logo from "../../public/images/logo-white.png";
@@ -39,7 +38,7 @@ export default function Home() {
         </section>
         <section className="md:px-24 flex flex-col items-center" id="what">
           <div className="flex flex-col items-center gap-4">
-            <Image src={Logo} alt="logo" height={60} />
+            <img src={Logo} alt="logo" height={60} />
             <h2 className="font-extrabold text-3xl text-primary">
               اینفینیتی لب
             </h2>

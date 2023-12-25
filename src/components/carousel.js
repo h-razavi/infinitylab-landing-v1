@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import community from "../../public/images/community.png";
 import speed from "../../public/images/high-speed.png";
 import social from "../../public/images/social-care.png";
@@ -13,7 +12,7 @@ function Carousel() {
         <div className="flex justify-between h-full">
           <div className="w-1/3 p-8 group relative">
             <div className="h-[16rem] w-[16rem] bg-primary rounded-full mx-auto grid place-items-center group-hover:scale-110 group-hover:transition group-hover:duration-500 ease-in-out">
-              <Image src={community} alt="community" height={160} />
+              <img src={community} alt="community" height={160} />
             </div>
             <div className="h-full w-full bg-primary rounded-lg grid place-items-center absolute top-0 opacity-0 group-hover:opacity-100 group-hover:transition-all group-hover:duration-500">
               <p className="text-black text-sm font-bold p-3 text-justify">
@@ -35,7 +34,7 @@ function Carousel() {
 
           <div className="w-1/3 p-8 group relative">
             <div className="h-[16rem] w-[16rem] bg-primary rounded-full mx-auto grid place-items-center group-hover:scale-110 group-hover:transitiongroup- hover:duration-500 ease-in-out">
-              <Image src={speed} alt="speed" height={160} />
+              <img src={speed} alt="speed" height={160} />
             </div>
             <div className="h-full w-full bg-primary rounded-lg grid place-items-center absolute top-0 opacity-0 group-hover:opacity-100 group-hover:transition-all group-hover:duration-500">
               <p className="text-black text-sm font-bold p-3 text-justify">
@@ -54,7 +53,7 @@ function Carousel() {
           </div>
           <div className="w-1/3 p-8 group relative">
             <div className="h-[16rem] w-[16rem] bg-primary rounded-full mx-auto grid place-items-center group-hover:scale-110 group-hover:transition group-hover:duration-500 ease-in-out">
-              <Image src={social} alt="social" height={160} />
+              <img src={social} alt="social" height={160} />
             </div>
             <div className="h-full w-full bg-primary rounded-lg grid place-items-center absolute top-0 opacity-0 group-hover:opacity-100 group-hover:transition-all group-hover:duration-500">
               <p className="text-black text-sm font-bold p-3 text-justify">
