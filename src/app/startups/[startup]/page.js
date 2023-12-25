@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import Image from "next/image";
 import React from "react";
 import StartupContactForm from "../components/StartupContactForm";
 
@@ -18,7 +19,7 @@ function StartupProfile() {
             </p>
           </div>
           <div className="flex flex-col justify-start items-center gap-8">
-            <img
+            <Image
               src="/images/startups/podjoo.jpg"
               alt="Podjoo"
               height={200}
@@ -74,7 +75,7 @@ function StartupProfile() {
           تعامل بیشتر و مستقیم داشته باشند
         </p>
         <div className="mx-auto rounded-2xl mt-4 bg-gradient-to-r from-slate-500 to-yellow-100 w-fit p-2">
-          <img
+          <Image
             src="/images/startups/mockup1.jpg"
             height={300}
             width={300}
@@ -97,7 +98,7 @@ function StartupProfile() {
             </h2>
             <div className="flex gap-4 items-center">
               <a href="https://instagram.com/podjoo" target="_blank">
-                <img
+                <Image
                   src={"/images/icons/instagram.svg"}
                   height={60}
                   width={60}
@@ -105,7 +106,7 @@ function StartupProfile() {
                 />
               </a>
               <a href="https://linkedin.com/podjoo" target="_blank">
-                <img
+                <Image
                   src={"/images/icons/linkedin.svg"}
                   height={60}
                   width={60}
@@ -113,7 +114,7 @@ function StartupProfile() {
                 />
               </a>
               <a href="https://telegram.com/podjoo" target="_blank">
-                <img
+                <Image
                   src={"/images/icons/telegram-color.svg"}
                   height={60}
                   width={60}
@@ -121,7 +122,7 @@ function StartupProfile() {
                 />
               </a>
               <a href="https://discord.com/podjoo" target="_blank">
-                <img
+                <Image
                   src={"/images/icons/discord.svg"}
                   height={60}
                   width={60}
@@ -136,7 +137,7 @@ function StartupProfile() {
             </h2>
             <div className="flex gap-4">
               <a href="https://github.com/podjoo" target="_blank">
-                <img
+                <Image
                   src={"/images/icons/github.svg"}
                   height={60}
                   width={60}
@@ -144,7 +145,7 @@ function StartupProfile() {
                 />
               </a>
               <a href="https://gitlab.com/podjoo" target="_blank">
-                <img
+                <Image
                   src={"/images/icons/gitlab.svg"}
                   height={60}
                   width={60}
@@ -152,7 +153,7 @@ function StartupProfile() {
                 />
               </a>
               <a href="https://notion.com/podjoo" target="_blank">
-                <img
+                <Image
                   src={"/images/icons/notion.svg"}
                   height={60}
                   width={60}
@@ -160,7 +161,7 @@ function StartupProfile() {
                 />
               </a>
               <a href="https://trello.com/podjoo" target="_blank">
-                <img
+                <Image
                   src={"/images/icons/trello.svg"}
                   height={60}
                   width={60}
@@ -175,7 +176,7 @@ function StartupProfile() {
             </h2>
             <div className="flex gap-4">
               <a href="https://github.com/podjoo" target="_blank">
-                <img
+                <Image
                   src={"/images/icons/newsletter.svg"}
                   height={60}
                   width={60}
@@ -183,7 +184,7 @@ function StartupProfile() {
                 />
               </a>
               <a href="https://gitlab.com/podjoo" target="_blank">
-                <img
+                <Image
                   src={"/images/icons/blog.svg"}
                   height={60}
                   width={60}
@@ -191,7 +192,7 @@ function StartupProfile() {
                 />
               </a>
               <a href="https://youtube.com/podjoo" target="_blank">
-                <img
+                <Image
                   src={"/images/icons/youtube.svg"}
                   height={60}
                   width={60}
@@ -205,16 +206,8 @@ function StartupProfile() {
               بحث‌وگفتگو
             </h2>
             <div className="flex gap-4">
-            <a href="https://telegram.com/podjoogroup" target="_blank">
-                <img
-                  src={"/images/icons/telegram-color.svg"}
-                  height={60}
-                  width={60}
-                  className="bg-white rounded-lg p-2 hover:-translate-y-2 transition-all duration-500"
-                />
-              </a>
               <a href="https://discord.com/podjoo" target="_blank">
-                <img
+                <Image
                   src={"/images/icons/discord.svg"}
                   height={60}
                   width={60}
@@ -222,7 +215,7 @@ function StartupProfile() {
                 />
               </a>
               <a href="https://googlemeet.com/podjoo" target="_blank">
-                <img
+                <Image
                   src={"/images/icons/google-meet.svg"}
                   height={60}
                   width={60}
@@ -230,7 +223,7 @@ function StartupProfile() {
                 />
               </a>
               <a href="https://zoom.com/podjoo" target="_blank">
-                <img
+                <Image
                   src={"/images/icons/zoom.svg"}
                   height={60}
                   width={60}
