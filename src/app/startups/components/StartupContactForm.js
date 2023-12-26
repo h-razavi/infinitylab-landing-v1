@@ -40,7 +40,7 @@ function handleSubmit(e){
         />
       </div>
       <textarea
-        placeholder="پیام"
+        placeholder="ایده خود را به طور خلاصه اینجا بنویسید. ما پس از بررسی با شما تماس خواهیم گرفت"
         className="bg-white bg-opacity-30 p-2 rounded-lg"
         rows={5}
         ref={messageInputRef}
