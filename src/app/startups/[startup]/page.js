@@ -3,11 +3,16 @@ import Image from "next/image";
 import React from "react";
 import StartupContactForm from "../components/StartupContactForm";
 import { startupData } from "@/app/data/startup";
+import Head from "next/head";
 
 function StartupProfile({ params }) {
   const startup = startupData.find((startup) => startup.id === params.startup);
   return (
     <div>
+      <Head>
+        <title>{startup.nameFa} | {startup.nameEN}</title>
+        <meta name="description" content={startup.description} />
+      </Head>
       <Navbar isMain={false} />
       <section className="mt-24 h-72">
         <div className="px-16 flex justify-between items-center">
