@@ -15,12 +15,19 @@ function StartupProfile({ params }) {
       </Head>
       <Navbar isMain={false} />
       <section className="mt-24 h-72">
-        <div className="px-16 flex justify-between items-center">
+        <div className="px-16 flex flex-col md:flex-row justify-between items-center">
+        <Image
+              src={startup.logo}
+              alt={startup.id}
+              height={200}
+              width={200}
+              className="block md:hidden mb-2 rounded-full shadow-lg border-8 border-white"
+            />
           <div className="flex flex-col justify-between items-start">
-            <h1 className="text-6xl drop-shadow-lg font-bold">
+            <h1 className="text-4xl md:text-6xl mx-auto md:mx-0 drop-shadow-lg font-bold">
               {startup.nameFa} | {startup.nameEN}
             </h1>
-            <p className="mt-8 text-2xl">{startup.description}</p>
+            <p className="mt-8 text-2xl text-center md:text-right">{startup.description}</p>
           </div>
           <div className="flex flex-col justify-start items-center gap-8">
             <Image
@@ -28,40 +35,40 @@ function StartupProfile({ params }) {
               alt={startup.id}
               height={200}
               width={200}
-              className="rounded-full shadow-lg border-8 border-white"
+              className="hidden md:block rounded-full shadow-lg border-8 border-white"
             />
             <a href={startup.websiteURL} target="_blank">
-              <div className="flex gap-4 bg-primary text-black text-lg font-bold bg-opacity-70 p-2 rounded-lg hover:bg-white hover:-translate-y-4 transition-all duration-500">
+              <div className="flex gap-4 bg-primary text-black mt-2 md:mt-0 text-lg font-bold bg-opacity-70 p-2 rounded-lg hover:bg-white hover:-translate-y-4 transition-all duration-500">
                 {startup.websiteText}
               </div>
             </a>
           </div>
         </div>
-        <div className="w-screen h-4 bg-primary bg-opacity-70 relative -top-36 -z-10" />
+        <div className="w-screen h-4 bg-primary bg-opacity-70 relative -top-[350px] md:-top-36 -z-10" />
       </section>
       {/* <div className="h-4 w-36 rounded-full bg-primary mx-auto mt-12" /> */}
-      <section className="mx-auto w-3/4 mt-12 p-8 border-8 border-white rounded-xl">
+      <section className="mx-auto w-3/4 mt-52 md:mt-12 p-8 border-8 border-white rounded-xl">
         <h2 className="text-3xl font-bold relative -top-12 bg-black inline px-4">
           اطلاعات اولیه
         </h2>
-        <ul className="leading-loose text-xl px-12 text-black">
-          <li className="bg-gradient-to-r from-teal-200 to-lime-200 my-4 px-8 py-2 rounded-2xl flex items-center justify-between">
+        <ul className="leading-loose text-xl md:px-12 text-black">
+          <li className="bg-gradient-to-r from-teal-200 to-lime-200 my-4 px-8 py-2 rounded-2xl flex flex-col md:flex-row items-center justify-between">
             <span>سال تاسیس</span>
-            <span className="font-bold text-2xl drop-shadow">{startup.initialInfo.yearFounded}</span>
+            <span className="font-bold md:text-2xl drop-shadow">{startup.initialInfo.yearFounded}</span>
           </li>
-          <li className="bg-gradient-to-r from-teal-200 to-lime-200 my-4 px-8 py-2 rounded-2xl flex items-center justify-between">
+          <li className="bg-gradient-to-r from-teal-200 to-lime-200 my-4 px-8 py-2 rounded-2xl flex flex-col md:flex-row items-center justify-between">
             <span>بنیانگذار</span>
-            <span className="font-bold text-2xl drop-shadow">{startup.initialInfo.founder}</span>
+            <span className="font-bold md:text-2xl drop-shadow">{startup.initialInfo.founder}</span>
           </li>
-          <li className="bg-gradient-to-r from-teal-200 to-lime-200 my-4 px-8 py-2 rounded-2xl flex items-center justify-between">
+          <li className="bg-gradient-to-r from-teal-200 to-lime-200 my-4 px-8 py-2 rounded-2xl flex flex-col md:flex-row items-center justify-between">
             <span>حوزه فعالیت</span>
-            <span className="font-bold text-2xl drop-shadow">
+            <span className="font-bold md:text-2xl drop-shadow">
               {startup.initialInfo.field}
             </span>
           </li>
-          <li className="bg-gradient-to-r from-teal-200 to-lime-200 my-4 px-8 py-2 rounded-2xl flex items-center justify-between">
+          <li className="bg-gradient-to-r from-teal-200 to-lime-200 my-4 px-8 py-2 rounded-2xl flex  flex-col md:flex-row items-center justify-between">
             <span>وضعیت</span>
-            <span className="font-bold text-2xl drop-shadow">
+            <span className="font-bold md:text-2xl text-center drop-shadow">
               {startup.initialInfo.status}
             </span>
           </li>
@@ -71,7 +78,7 @@ function StartupProfile({ params }) {
         <h2 className="text-3xl font-bold relative -top-12 bg-black inline px-4">
           در یک نگاه
         </h2>
-        <p className="text-xl text-center px-12">
+        <p className="text-xl text-center md:px-12">
           <b>{startup.nameFa}</b> {startup.initialInfo.shortIntro}
         </p>
         <div className="mx-auto rounded-2xl mt-4 bg-gradient-to-r from-slate-500 to-yellow-100 w-fit p-2">
@@ -93,10 +100,10 @@ function StartupProfile({ params }) {
         </p>
         <div className="w-full mt-8 grid grid-cols-1 md:grid-cols-2 gap-5 gap-y-12">
           <div className="min-w-1/2 border-4 border-white rounded-xl p-4">
-            <h2 className="text-3xl font-bold relative -top-10 bg-black inline px-4">
+            <h2 className="md:text-3xl font-bold relative -top-10 bg-black inline px-4">
               شبکه‌های اجتماعی
             </h2>
-            <div className="flex gap-4 items-center">
+            <div className="flex flex-wrap gap-4 items-center justify-center">
               <a href={startup.links.instagram} target="_blank">
                 <Image
                   src={"/images/icons/instagram.svg"}
@@ -132,10 +139,10 @@ function StartupProfile({ params }) {
             </div>
           </div>
           <div className="min-w-1/2 border-4 border-white rounded-xl p-4">
-            <h2 className="text-3xl font-bold relative -top-10 bg-black inline px-4">
+            <h2 className="md:text-3xl font-bold relative -top-10 bg-black inline px-4">
               فضای کاری
             </h2>
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-4 items-center justify-center">
               <a href={startup.links.github} target="_blank">
                 <Image
                   src={"/images/icons/github.svg"}
@@ -171,10 +178,10 @@ function StartupProfile({ params }) {
             </div>
           </div>
           <div className="min-w-1/2 border-4 border-white rounded-xl p-4">
-            <h2 className="text-3xl font-bold relative -top-10 bg-black inline px-4">
+            <h2 className="md:text-3xl font-bold relative -top-10 bg-black inline px-4">
               اطلاع‌رسانی
             </h2>
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-4 items-center justify-center">
               <a href={startup.links.newsletter} target="_blank">
                 <Image
                   src={"/images/icons/newsletter.svg"}
@@ -202,10 +209,10 @@ function StartupProfile({ params }) {
             </div>
           </div>
           <div className="min-w-1/2 border-4 border-white rounded-xl p-4">
-            <h2 className="text-3xl font-bold relative -top-10 bg-black inline px-4">
+            <h2 className="md:text-3xl font-bold relative -top-10 bg-black inline px-4">
               بحث‌وگفتگو
             </h2>
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-4 items-center justify-center">
               <a href={startup.links.discord} target="_blank">
                 <Image
                   src={"/images/icons/discord.svg"}
@@ -234,10 +241,10 @@ function StartupProfile({ params }) {
           </div>
         </div>
         <div className="w-full mt-8 border-4 border-white rounded-2xl px-4">
-          <h2 className="text-3xl font-bold relative -top-4 bg-black inline px-4">
+          <h2 className="md:text-3xl font-bold relative -top-4 bg-black inline px-4">
             فرم تماس
           </h2>
-          <p>
+          <p className="text-center md:text-right">
             سوالات بیشتری دارید؟جهت تماس مستقیم با این استارت‌آپ فرم زیر را پر
             کنید.
           </p>

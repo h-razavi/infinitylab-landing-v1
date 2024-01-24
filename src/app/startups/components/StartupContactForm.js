@@ -25,17 +25,17 @@ function handleSubmit(e){
 }
   return (
     <form className="mt-8 flex flex-col gap-4 w-full mb-8" onSubmit={handleSubmit}>
-      <div className="flex gap-4 w-full justify-between">
+      <div className="flex flex-col md:flex-row gap-4 w-full justify-between">
         <input
           type="text"
           placeholder="نام"
-          className="bg-white bg-opacity-30 p-2 rounded-lg w-[50%]"
+          className="bg-white bg-opacity-30 p-2 rounded-lg md:w-[50%]"
           ref={nameInputRef}
         />
         <input
           type="email"
           placeholder="ایمیل"
-          className="bg-white bg-opacity-30 p-2 rounded-lg w-[50%]"
+          className="bg-white bg-opacity-30 p-2 rounded-lg md:w-[50%]"
           ref={emailInputRef}
         />
       </div>
